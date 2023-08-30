@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edtCost"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/cost_of_service"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txServiceQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="12sp"
+        android:text="@string/how_was_the_service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtCost" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/rgTipOptions"
+        android:layout_marginStart="10dp"
+        android:checkedButton="@id/rb20per"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txServiceQuestion"
+        >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb20per"
+            android:text="@string/amazing_20"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb18per"
+            android:text="@string/good_18"/>
+
+        <RadioButton
+            android:id="@+id/rb15per"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/okay_15" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/swRoundUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:checked="true"
+        android:minHeight="48dp"
+        android:padding="5dp"
+        android:text="@string/round_up_tip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rgTipOptions" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_tip_amount"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/swRoundUp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="10dp"
+        android:id="@+id/btnCalculateTip"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Tip amount : N/A"
+        app:layout_constraintTop_toBottomOf="@id/btnCalculateTip"
+        android:layout_marginHorizontal="10dp"
+        android:id="@+id/txTipAmt"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
